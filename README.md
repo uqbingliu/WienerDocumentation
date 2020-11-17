@@ -34,3 +34,8 @@ module load gnu/5.4.0
 module load mvapich2
 
 srun python3 PPO_multi_gpu_train.py
+
+Monitoring your job:
+squeue: list all current jobs of all users.
+squeue -u username: list the jobs that belong to the user of username.
+watch -p -n 1 scontrol show jobid -dd 303438: show the details of job with id 303438.
