@@ -1,4 +1,4 @@
-# WienerDocumentation
+# Wiener Documentation
 Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=Wiener&tab=m&vn=&hide-hf=false](http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=Wiener&tab=m&vn=&hide-hf=false)
 
 
@@ -14,7 +14,7 @@ Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs
 `--gres`: how many gpus you want for your job. Example: `--gres=gpu:2` (will use 2 gpus), `--gres=gpu:tesla-smx2:2` (use 2 tesla GPU)
 
 
-###Interactive mode: 
+### Interactive mode: 
 `srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash`
 
 ### Submit job with sbatch:
