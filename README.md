@@ -1,19 +1,24 @@
 # WienerDocumentation
-Monitering the nodes usages:
-http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=Wiener&tab=m&vn=&hide-hf=false
+Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=Wiener&tab=m&vn=&hide-hf=false](http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs=&ce=&m=load_one&s=by+name&c=Wiener&tab=m&vn=&hide-hf=false)
 
 
-Arguments:
--N: number of nodes
--w: spesifiy which node you want to use. Example: -w gpunode-1-14
---cpus-per-task: how many cpus you want to have for the task. Example: --cpus-per-task=4 (will use 4 cpus)
---mem-per-cpu: how much memery you want for each cpu. Example: --mem-per-cpu=30G (each cpu has 30G ram)
---gres: how many gpus you want for your job. Example: --gres=gpu:2 (will use 2 gpus)
+### Arguments:
+`-N`: number of nodes.
 
-Interactive mode:
-srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash
+`-w`: spesifiy which node you want to use. Example: -w gpunode-1-14
 
-Submit job with sbatch:
+`--cpus-per-task`: how many cpus you want to have for the task. Example: --cpus-per-task=4 (will use 4 cpus)
+
+`--mem-per-cpu`: how much memery you want for each cpu. Example: --mem-per-cpu=30G (each cpu has 30G ram)
+
+`--gres`: how many gpus you want for your job. Example: `--gres=gpu:2` (will use 2 gpus), `--gres=gpu:tesla-smx2:2` (use 2 tesla GPU)
+
+
+###Interactive mode: 
+`srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash`
+
+### Submit job with sbatch:
+```
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH --job-name=PPO_train2
@@ -34,8 +39,11 @@ module load gnu/5.4.0
 module load mvapich2
 
 srun python3 PPO_multi_gpu_train.py
+```
 
-Monitoring your job:
-squeue: list all current jobs of all users.
-squeue -u username: list the jobs that belong to the user of username.
-watch -p -n 1 scontrol show jobid -dd 303438: show the details of job with id 303438.
+### Monitoring your job:
+`squeue`: list all current jobs of all users.
+
+`squeue` -u username: list the jobs that belong to the user of username.
+
+`watch -p -n 1 scontrol show jobid -dd 303438`: show the details of job with id 303438.
