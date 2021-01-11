@@ -33,7 +33,7 @@ Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs
 #SBATCH --cpus-per-task=4
 
 module load anaconda/3.6
-source activate DeepLearning
+source activate deeplearning
 module load cuda/10.0.130
 module load gnu/5.4.0
 module load mvapich2
