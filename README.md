@@ -16,6 +16,7 @@ Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs
 
 ### Interactive mode: 
 `srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash`
+`srun -N 4 --ntasks-per-node=1 --cpus-per-task=2 --mem-per-cpu=30G --partition=gpu --gres=gpu:1 --pty bash`
 
 ### Submit job with sbatch:
 ```
