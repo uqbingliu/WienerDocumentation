@@ -13,10 +13,10 @@ Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs
 
 `--gres`: how many gpus you want for your job. Example: `--gres=gpu:2` (will use 2 gpus), `--gres=gpu:tesla-smx2:2` (use 2 tesla GPU)
 
-
 ### Interactive mode: 
-`srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash`
-`srun -N 4 --ntasks-per-node=1 --cpus-per-task=2 --mem-per-cpu=30G --partition=gpu --gres=gpu:1 --pty bash`
+`srun -N 1 --cpus-per-task=2 --mem-per-cpu=30G  --gres=gpu:2 --pty bash` (1 node, 2 cpus, memory= 2 * 30g, 2 gpus.)
+
+`srun -N 4 --ntasks-per-node=1 --cpus-per-task=2 --mem-per-cpu=30G --partition=gpu --gres=gpu:1 --pty bash` (4 node, 2 cpus per node, memory= 2 * 30g per node, 2 gpus.)
 
 ### Submit job with sbatch:
 ```
@@ -48,3 +48,6 @@ srun python3 PPO_multi_gpu_train.py
 `squeue` -u username: list the jobs that belong to the user of username.
 
 `watch -p -n 1 scontrol show jobid -dd 303438`: show the details of job with id 303438.
+
+###
+UQ RDM mounted folder: /afm02/Q3/Q3614/
