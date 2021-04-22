@@ -26,6 +26,8 @@ Monitering the nodes status: [http://wiener.hpc.net.uq.edu.au/ganglia/?r=hour&cs
 #SBATCH -n 1
 #SBATCH -w gpunode-1-14
 #SBATCH --time=48:00:00
+#SBATCH --mail-user=xxx@xxx.com
+#SBATCH --mail-type=END
 #SBATCH --mem-per-cpu=30G
 #SBATCH -o tensor_out2.txt
 #SBATCH -e tensor_erro2.txt
